@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+import {currentDayLabel} from '$lib/date';
+</script>
+
+
+<h1>{currentDayLabel}</h1>
+<!-- Thinking here we will have icons for each user with the latest ones first -->
+
+
+<div>
+    <button>Log Entry</button>
+</div>
