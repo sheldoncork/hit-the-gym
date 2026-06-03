@@ -6,7 +6,7 @@ interface Props {
 
 let {
     username,
-    avatarUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(username) + '&background=random&size=128'
+    avatarUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(username) + '&background=fff&size=128'
 }: Props = $props();
 </script>
 
@@ -16,6 +16,6 @@ let {
 img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 </style>

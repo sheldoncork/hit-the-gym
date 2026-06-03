@@ -1,5 +1,6 @@
 <script lang="ts">
 import {PUBLIC_BACKEND_URL} from '$env/static/public';
+import UserIcon from '$lib/components/UserIcon.svelte';
 
 interface LogEntry {
     type: string;
@@ -20,6 +21,7 @@ async function logEntry(type: string) {
 
 <div class = "screen">
     <button onclick={() => logEntry}>Log Entry</button>
+    <UserIcon username="John Doe" />
 </div>
 
 <style>
