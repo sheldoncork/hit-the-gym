@@ -1,6 +1,6 @@
 <script lang="ts">
 import {currentDayLabel} from '$lib/date';
-
+import NavigationButton from '$lib/components/NavigationButton.svelte';
 </script>
 
 
@@ -9,5 +9,4 @@ import {currentDayLabel} from '$lib/date';
 
 
 <div>
-    <button>Log Entry</button>
 </div>

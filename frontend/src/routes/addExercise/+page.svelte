@@ -1,22 +1,6 @@
 <script lang="ts">
-import {PUBLIC_BACKEND_URL} from '$env/static/public';
 import UserIcon from '$lib/components/UserIcon.svelte';
-
-interface LogEntry {
-    type: string;
-    timestamp: string;
-}
-
-async function logEntry(type: string) {
-    console.log(`Logging ${type} entry`);
-    const response = await fetch(`${PUBLIC_BACKEND_URL}/log`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ type })
-    });
-}
+import logEntry from '$lib/logEntry';
 </script>
 
 <div class = "screen">
