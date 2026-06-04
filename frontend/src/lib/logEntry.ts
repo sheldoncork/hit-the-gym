@@ -6,13 +6,13 @@ interface LogEntry {
 }
 
 async function logEntry(entry: LogEntry): Promise<void> {
-    console.log(`Logging ${type} entry`);
+    console.log(`Logging ${entry} entry`);
     const response = await fetch(`${PUBLIC_BACKEND_URL}/log`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ type })
+        body: JSON.stringify({ entry })
     });
 }
 

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import '../global.css';
-import UserIcon from '$lib/components/UserIcon.svelte';
-import NavigationButton from '$lib/components/NavigationButton.svelte';
+	import UserIcon from '$lib/components/UserIcon.svelte';
 
 	let { children } = $props();
 </script>
@@ -22,20 +21,18 @@ import NavigationButton from '$lib/components/NavigationButton.svelte';
 	{@render children()}
 	</main>
 
-	<footer> 
-		<table>
-			<tbody>
-				<tr>
-					<td><NavigationButton href="/">Home</NavigationButton></td>
-					<td><NavigationButton href="/addExercise">Add Exercise</NavigationButton></td>
-				</tr>
-			</tbody>
-			
-		</table>
+	<footer>
+		<nav>
+			<a class="navbar_btn" href="/">Home</a>
+			<a class="navbar_btn" href="/addExercise">Add Exercise</a>
+		</nav>
 	</footer>
 </div>
 	
 <style>
+	.navbar_btn {
+		font-size: 125%
+	}
 	.app-container {
 		display: flex;
 		flex-direction: column;
@@ -48,14 +45,14 @@ import NavigationButton from '$lib/components/NavigationButton.svelte';
 		min-height: 10vh;
 		padding: 10cqw;
 	}
-	footer {
-		display: flex;
-		justify-content: flex-end;
+	nav {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-evenly;
 		background-color: var(--color-primary);
+		gap: 5cqw;
 		padding: 5cqw;
-	}
-	table {
-		width: 100%;
+		min-height: 10vh;
 	}
 	header {
 		display: flex;
@@ -64,4 +61,5 @@ import NavigationButton from '$lib/components/NavigationButton.svelte';
 		background-color: var(--color-primary);
 		padding: 5cqw;
 	}
+
 </style>

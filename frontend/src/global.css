@@ -1,18 +1,49 @@
 /* src/app.css */
 :root {
-    /* Define your colors here. Always start the name with two dashes '--' */
-    --color-primary: #3e8be2;
-	--color-secondary: #0e4b91;
-    --color-background: #a7cadf;
-    --color-surface: #242424;
-    --color-text: #ffffff;
-    --color-text-muted: #aaaaaa;
+	/* Define your colors here. Always start the name with two dashes '--' */
+	--color-primary: #fab664;
+	--color-secondary: #df7d07;
+	--color-tertiary: #ffd199;
+	--color-quaternary: #ffb875;
+	--color-background: #ffe8cc;
+	--color-surface: #242424;
+	--color-text: #613e13;
+	--color-text-muted: #aaaaaa;
+	/*colors
+    #613E13
+    #945200
+    #FAB664
+    #FFD199
+    #FFE8CC
+    */
 }
 
 /* You can also apply them globally right here */
 body {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    margin: 0;
-    font-family: Arial, sans-serif;
+	background-color: var(--color-background);
+	color: var(--color-text);
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+button,
+a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-secondary);
+	color: var(--color-text);
+	padding: 2vh 2vh;
+	border: none;
+	border-radius: 15px;
+	font-weight: bold;
+	cursor: auto;
+	text-decoration: none;
+	transition: filter 0.2s;
+	flex-grow: 1;
+	text-align: center;
+}
+
+button:hover {
+	filter: brightness(1.2);
 }
