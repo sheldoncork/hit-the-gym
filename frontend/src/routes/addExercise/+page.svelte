@@ -1,17 +1,23 @@
 <script lang="ts">
+import { onMount } from 'svelte';
 import UserIcon from '$lib/components/UserIcon.svelte';
 import logEntry from '$lib/logEntry';
+import { getExerciseFields } from '$lib/api/workoutService';
+import type Row from '$lib/models/Row';
 
-interface Row {
-    name: string;
-    inputType?: string;
-}
 
+// TODO: rows will come from backend
+// TODO: Flex Debrah's Box 
 let a: Row = {name: "Exercise", inputType: "text"};
 let b: Row = {name: "Sets", inputType: "number"};
 let c: Row = {name: "Reps", inputType: "number"};
+let d: Row = {name: "Reps", inputType: "number"};
+let e: Row = {name: "Reps", inputType: "number"};
+let f: Row = {name: "Reps", inputType: "number"};
+let g: Row = {name: "Reps", inputType: "number"};
 
-let rows: Row[] = [a, b, c];
+    let rows: Row[] = $state([]); 
+    onMount(async () => {  rows = await getExerciseFields(); });
 </script>
 
 <div class="container">
@@ -19,7 +25,7 @@ let rows: Row[] = [a, b, c];
     <form onsubmit={null}>
        
     
-        <!-- Fed from database as dropdown with option -->
+        <!-- TODO: Fed from database as dropdown with option -->
                 
         {#each rows as row}
              <label for={row.name}>{row.name}</label>
@@ -61,7 +67,7 @@ let rows: Row[] = [a, b, c];
     }
     
     label {
-        padding-top: 3vh;
+        padding-top: 1vh;
         text-align: center;
         font-weight: bold;
         color: var(--color-text); /* Use your global colors! */

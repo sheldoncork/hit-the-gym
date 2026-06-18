@@ -41,25 +41,32 @@
 	main {
 		display: flex;
         flex-direction: column;
+		box-sizing: border-box;
 		flex-grow: 1;
-		min-height: 10vh;
-		padding: 10cqw;
 	}
 	nav {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		justify-content: space-evenly;
 		background-color: var(--color-primary);
-		gap: 5cqw;
-		padding: 5cqw;
+		gap: 1cqw;
+		padding: 1cqw;
 		min-height: 10vh;
 	}
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		background-color: var(--color-primary);
-		padding: 5cqw;
+		padding: 1cqw;
+	}
+	footer {
+		position: sticky;
+		bottom: 0;
+		z-index: 10;
 	}
 
 </style>

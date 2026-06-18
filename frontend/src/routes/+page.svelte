@@ -1,13 +1,18 @@
 <script lang="ts">
+	import UserIcon from '$lib/components/UserIcon.svelte';
+	import DailyUser from '$lib/components/DailyUsers.svelte';
 	import {currentDayLabel} from '$lib/date';
-	import ScrollerDayPicker from '$lib/components/ScrollerDayPicker.svelte';
+	import DailyUsers from '$lib/components/DailyUsers.svelte';
 </script>
 
 <h1>{currentDayLabel}</h1>
-<ScrollerDayPicker/>
 <div class="dashboard-layout">
     <!-- Thinking here we will have icons for each user with the latest ones first -->
+	 <!-- Bubble User Icons in a space -->
+	  <DailyUsers />
 </div>
+
+<!-- https://excalidraw.com/#room=5f510c2882073269fd6f,Xj8scV2_syew_b_TI2wBQA -->
 
 <style>
     .dashboard-layout {

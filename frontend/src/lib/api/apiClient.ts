@@ -1,6 +1,6 @@
 import { PUBLIC_BACKEND_URL } from '$env/static/public';
 
-export async function apiFetch<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+export default async function apiFetch<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const url = `${PUBLIC_BACKEND_URL}${endpoint}`;
 
     const defaultHeaders = {

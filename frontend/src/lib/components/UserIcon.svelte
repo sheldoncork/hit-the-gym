@@ -1,13 +1,10 @@
 <script lang="ts">
-interface Props {
-    avatarUrl?: string;
-    username: string;
-}
+import type User from '$lib/models/User';
 
 let {
     username,
     avatarUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(username) + '&background=fff&size=128'
-}: Props = $props();
+}: User = $props();
 </script>
 
 <img src={avatarUrl} alt="{username}'s Avatar" />
