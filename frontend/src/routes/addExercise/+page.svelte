@@ -2,8 +2,9 @@
 import { onMount } from 'svelte';
 import UserIcon from '$lib/components/UserIcon.svelte';
 import logEntry from '$lib/logEntry';
-import { getExerciseFields } from '$lib/api/workoutService';
+import { getExerciseFields, getExercise } from '$lib/api/workoutService';
 import type Row from '$lib/models/Row';
+import type Exercise from '$lib/models/Exercise';
 
 
 // TODO: rows will come from backend
@@ -16,15 +17,18 @@ let e: Row = {name: "Reps", inputType: "number"};
 let f: Row = {name: "Reps", inputType: "number"};
 let g: Row = {name: "Reps", inputType: "number"};
 
-    let rows: Row[] = $state([]); 
+    let rows: Row[] = $state([]);
+    let exercise: Exercise = $state({});
     onMount(async () => {  rows = await getExerciseFields(); });
+    onMount(async () => {  exercise = await getExercise(); });
 </script>
 
 <div class="container">
     <h2 class="title">Add Exercise</h2>
     <form onsubmit={null}>
-       
-    
+        
+        
+        {exercise.description}
         <!-- TODO: Fed from database as dropdown with option -->
                 
         {#each rows as row}

@@ -1,5 +1,6 @@
 package com.sheldonc.hitthegym.model;
 
-public class UserRequest {
-
+public record UserRequest(
+        String username,
+        String password) {
 }
